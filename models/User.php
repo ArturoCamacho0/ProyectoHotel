@@ -8,6 +8,7 @@ class User{
     private $birthdate;
     private $email;
     private $password;
+    private $image;
 
     private $db;
 

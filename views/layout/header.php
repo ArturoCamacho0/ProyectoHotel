@@ -31,7 +31,7 @@
 
                 <?php if(isset($_SESSION['identity'])): ?>
                     <li class="menu_revert">
-                        <a href="<?=base_url?>user/detail">Mi perfil</a>
+                        <a href="<?=base_url?>user/index">Mi perfil</a>
                     </li>
                 <?php endif; ?>
                 </ul>

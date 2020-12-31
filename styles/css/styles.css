@@ -215,3 +215,35 @@ button:hover{
     align-items: center;
     margin-top: 40px;
 }
+
+/* Usuario detalles */
+.detail_profile{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.img_profile{
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+.btn_editp{
+    background-color: #1f6f8b;
+    color: white;
+    padding: 10px;
+    text-decoration: none !important;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.red{
+    background-color:crimson;
+}

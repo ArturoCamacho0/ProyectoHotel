@@ -3,6 +3,11 @@ require_once 'models/User.php';
 
 class UserController{
     public function index(){
+        Utils::isLogged();
+
+        if(isset($_SESSION['identity'])){
+            $user = $_SESSION['identity'];
+        }
         require_once 'views/user/index.php';
     }
 
@@ -11,9 +16,8 @@ class UserController{
     }
 
     public function register(){
-        if(isset($_SESSION['identity'])){
-            header("Location: ".base_url);
-        }
+        Utils::isLogged();
+
         require_once 'views/user/register.php';
     }
 
@@ -103,9 +107,5 @@ class UserController{
         }
 
         header("Location: ".base_url);
-    }
-
-    public function detail(){
-        require_once 'views/user/detail.php';
     }
 }
