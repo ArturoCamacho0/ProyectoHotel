@@ -1,0 +1,217 @@
+/* Estilos generales */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e6d5b8;
+}
+
+a{
+    text-decoration: none;
+    color: #1f6f8b;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+li{
+    list-style: none;
+}
+
+.alert_red{
+    text-align: center;
+    margin-top: 10px;
+    color: brown;
+}
+
+.alert_green{
+    text-align: center;
+    margin-top: 10px;
+    color: darkseagreen;
+}
+
+/* Cabecera */
+#header{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    position: fixed;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1c2b2d;
+    opacity: 0.99;
+}
+
+.menu{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu > ul{
+    display: flex;
+    flex-flow: row;
+    gap: 30px;
+}
+
+.menu > ul li a{
+    font-size: 1.2rem;
+    color: #e6d5b8;
+    text-decoration: none;
+}
+
+.menu > ul li a:hover{
+    color: #99a8b2;
+}
+
+.menu_revert > a{
+    color: #99a8b2 !important;
+}
+
+.menu_revert > a:hover{
+    color:#e6d5b8 !important;
+}
+
+.logo > h1{
+    font-size: 3rem;
+    color: #99a8b2;
+    font-weight: bolder;
+    transition: all 300ms;
+}
+
+.logo > h1:hover{
+    text-shadow: 2px 2px 2px #1f6f8b;
+    cursor: pointer;
+}
+
+.button_session{
+    background-color: #1c2b2d;
+    color: #919ca3;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: all 300ms;
+}
+
+.button_session:hover{
+    background-color: #919ca3;
+    color: #1c2b2d;
+    text-decoration: none;
+}
+
+/* Contenido de la página */
+#content{
+    width: 80%;
+    min-height: 60vh;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    padding-top: 120px;
+    justify-content: center;
+}
+
+#content > h2{
+    text-align: center;
+}
+
+/* Pié de página */
+#footer{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1c2b2d;
+}
+
+.names{
+    color: #e6d5b8;
+    line-height: 25px;
+    margin: 10px;
+}
+
+.copy{
+    color: #e6d5b8;
+}
+
+.title{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 2rem;
+    color: #1f6f8b;
+}
+
+/* Formularios */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+select,
+input[type="date"],
+textarea{
+    width: 50%;
+    padding: 7px;
+    border: 1px solid #1c2b2d;
+    border-radius: 5px;
+    color: #1f6f8b;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+textarea:focus{
+    color: #ccc;
+    background-color: #1c2b2d;
+}
+
+label{
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+input[type="submit"],
+button{
+    min-width: 100px;
+    padding: 10px;
+    background-color: #919ca3;
+    color: #1c2b2d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+input[type="submit"]:hover,
+button:hover{
+    color: #919ca3;
+    background-color: #1c2b2d;
+}
+
+/* Login de usuarios */
+.form_login > form{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    gap: 15px;
+    align-self: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Registro de usuarios */
+.form_register > form{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    gap: 15px;
+    align-self: center;
+    align-items: center;
+    margin-top: 40px;
+}
