@@ -105,6 +105,32 @@ class User{
         return $this;
     }
 
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $this->db->real_escape_string($image);
+
+        return $this;
+    }
+
+    public function getOne(){
+        $id = $this->getId();
+
+        $sql = "SELECT * FROM user WHERE id_user = $id";
+
+        $user = $this->db->query($sql);
+
+        if($user){
+            return $user->fetch_object();
+        }else{
+            return false;
+        }
+    }
+
     /* Registro de usuario */
     public function save(){
         $name = $this->getName();
@@ -113,6 +139,7 @@ class User{
         $birthdate = $this->getBirthdate();
         $email = $this->getEmail();
         $password = $this->getPassword();
+        $image = $this->getImage();
 
         $sql = "INSERT INTO user VALUES(
             NULL,
@@ -121,8 +148,41 @@ class User{
             '$gender',
             '$birthdate',
             '$email',
-            '$password'
+            '$password',
+            '$image'
         )";
+
+        $save = $this->db->query($sql);
+
+        if($save){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /* Actualización del usuario */
+    public function update(){
+        $id = $this->getId();
+        $name = $this->getName();
+        $lastname = $this->getLastname();
+        $gender = $this->getGender();
+        $birthdate = $this->getBirthdate();
+        $email = $this->getEmail();
+        $image = $this->getImage();
+
+        $sql = " UPDATE `user`
+            SET `name_user` = '$name',
+            `lastname_user` = '$lastname',
+            `gender_user` = '$gender',
+            `birthdate`= '$birthdate',
+            `email_user` = '$email' ";
+
+        if($image != null){
+            $sql .= ", `image_user` = '$image' ";
+        }
+
+        $sql .= "WHERE id_user = $id";
 
         $save = $this->db->query($sql);
 

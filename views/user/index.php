@@ -3,9 +3,9 @@
 
     <div class="detail_profile">
         <?php if(isset($user->image_user) && $user->image_user) : ?>
-            <img class="img_profile" src="<?= base_url ?>styles/images/<?= $user->image_user ?>" alt="Imagen del perfil"/>
+            <img class="img_profile" src="<?= base_url ?>uploads/images/<?= $user->image_user ?>" alt="Imagen del perfil"/>
         <?php else: ?>
-            <img class="img_profile" src="<?= base_url ?>styles/images/profile_blank.png" alt="Imagen del perfil"/>
+            <img class="img_profile" src="<?= base_url ?>uploads/images/profile_blank.png" alt="Imagen del perfil"/>
         <?php endif; ?>
 
         <div class="detail_profile-text">
@@ -29,8 +29,7 @@
             <?= $user->email_user ?>
 
             <br/><br/><br/><br/>
-            <a class="btn_editp">Editar el perfil</a>
-            <a class="btn_editp red">Eliminar el perfil</a>
+            <a href="<?=base_url?>user/update_view&id=<?= $user->id_user ?>" class="btn_editp">Editar el perfil</a>
         </div>
     </div>
 <?php endif; ?>

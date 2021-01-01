@@ -5,7 +5,7 @@
 <?php endif; ?>
 
 <div class="form_register">
-    <form method="post" action="<?=base_url?>user/save">
+    <form method="post" action="<?=base_url?>user/save" enctype="multipart/form-data">
         <label for="name">Nombre</label>
         <input type="text" name="name"/>
 
@@ -27,6 +27,9 @@
 
         <label for="password">Contraseña</label>
         <input type="password" name="password"/>
+
+        <label for="image">Imágen de perfil</label>
+        <input type="file" name="image"/>
 
         <input type="submit" value="Guardar"/>
     </form>
