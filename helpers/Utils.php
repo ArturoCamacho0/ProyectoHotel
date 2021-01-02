@@ -8,4 +8,12 @@ class Utils{
             header('Location: '.base_url);
         }
     }
+
+    public static function isAdmin(){
+        if(isset($_SESSION['admin'])){
+            return true;
+        }else{
+            header('Location: '.base_url);
+        }
+    }
 }

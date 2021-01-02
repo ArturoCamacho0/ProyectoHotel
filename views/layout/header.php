@@ -22,11 +22,7 @@
                     </li>
 
                     <li>
-                        <a href="#">Habitaciones</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Contactanos</a>
+                        <a href="<?=base_url?>room/index">Habitaciones</a>
                     </li>
 
                 <?php if(isset($_SESSION['identity'])): ?>

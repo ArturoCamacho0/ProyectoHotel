@@ -160,6 +160,10 @@ class UserController{
 
                 $identity = $user->login();
 
+                if($identity->role_user == "admin"){
+                    $_SESSION['admin'] = true;
+                }
+
                 if($identity && is_object($identity)){
                     $_SESSION['identity'] = $identity;
 
@@ -185,6 +189,9 @@ class UserController{
     }
 
     public function logout(){
+        if(isset($_SESSION['admin'])){
+            unset($_SESSION['admin']);
+        }
         if(isset($_SESSION['identity'])){
             unset($_SESSION['identity']);
         }else if(isset($_SESSION['error_login'])){
