@@ -5,7 +5,10 @@ class Utils{
         if(isset($_SESSION['identity'])){
             return true;
         }else{
-            header('Location: '.base_url);
+            echo'<script type="text/javascript">
+                alert("Inicia sesión primero");
+                window.location.href="'.base_url.'";
+                </script>';
         }
     }
 
@@ -13,7 +16,10 @@ class Utils{
         if(isset($_SESSION['admin'])){
             return true;
         }else{
-            header('Location: '.base_url);
+            echo'<script type="text/javascript">
+                alert("No eres administrador");
+                window.location.href="index.php";
+                </script>';
         }
     }
 }

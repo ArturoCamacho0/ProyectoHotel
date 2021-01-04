@@ -35,3 +35,26 @@ CREATE TABLE IF NOT EXISTS room(
 
     CONSTRAINT pk_room PRIMARY KEY (id_room)
 )ENGINE=InnoDB;
+
+
+
+CREATE TABLE IF NOT EXISTS payment(
+    id_payment INT(255) AUTO_INCREMENT,
+    card_number VARCHAR(255) NOT NULL,
+    expiration_date VARCHAR(50) NOT NULL,
+    cvv_number VARCHAR(3) NOT NULL,
+    user_id INT(255) NOT NULL,
+
+    CONSTRAINT pk_payment PRIMARY KEY (id_payment),
+    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user(id_user)
+);
+
+CREATE TABLE IF NOT EXISTS reservation(
+    id_reservation INT(255) AUTO_INCREMENT,
+    room_id INT(255) NOT NULL,
+    payment_id INT(255) NOT NULL,
+
+    CONSTRAINT pk_reservation PRIMARY KEY (id_reservation),
+    CONSTRAINT fk_room FOREIGN KEY (room_id) REFERENCES room(id_room),
+    CONSTRAINT fk_payment FOREIGN KEY (payment_id) REFERENCES pay(id_payment)
+);

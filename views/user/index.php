@@ -30,6 +30,7 @@
 
             <br/><br/><br/><br/>
             <a href="<?=base_url?>user/update_view&id=<?= $user->id_user ?>" class="btn_editp">Editar el perfil</a>
+            <a href="<?=base_url?>payment/show" class="button_session">Ver tarjetas</a>
         </div>
     </div>
 <?php endif; ?>

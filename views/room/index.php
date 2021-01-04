@@ -6,7 +6,7 @@
 
 <?php if(isset($_SESSION['room_add']) && $_SESSION['room_add'] == "complete"): ?>
     <strong class="alert_green">Se ha creado correctamente!</strong>
-<?php endif; ?>
+<?php unset($_SESSION['room_add']);endif; ?>
 
 <div class="section_rooms">
 

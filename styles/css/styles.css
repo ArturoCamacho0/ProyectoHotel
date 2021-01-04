@@ -181,8 +181,8 @@ input[type="submit"],
 button{
     min-width: 100px;
     padding: 10px;
-    background-color: #919ca3;
-    color: #1c2b2d;
+    color: #919ca3;
+    background-color: #1c2b2d;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -191,8 +191,8 @@ button{
 
 input[type="submit"]:hover,
 button:hover{
-    color: #919ca3;
-    background-color: #1c2b2d;
+    background-color: #919ca3;
+    color: #1c2b2d;
 }
 
 /* Login de usuarios */
@@ -252,7 +252,7 @@ button:hover{
 }
 
 .red{
-    background-color:crimson;
+    background-color:crimson !important;
 }
 
 
@@ -328,4 +328,60 @@ button:hover{
 
 .room_img{
     border-radius: 0;
+    width: 40%;
+    height: auto;
+}
+
+
+/* Formulario de pago */
+.month_year{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.month_year > label{
+    font-weight: 100;
+}
+
+.reservation{
+    grid-template-columns: 1fr 0fr;
+}
+
+.button_delete{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.button_delete:hover{
+    background-color: white !important;
+    color: crimson;
+    border: 1px solid crimson !important;
+}
+
+
+/* Pagos */
+.section_payments{
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.payment_block{
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
 }

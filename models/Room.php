@@ -130,6 +130,24 @@ class Room{
         }
     }
 
+    public function get_allByUser($id){
+        $user_id = $id;
+
+        $sql = "SELECT room.*
+                FROM payment
+                INNER JOIN reservation ON reservation.payment_id = payment.id_payment
+                INNER JOIN room ON room.id_room = reservation.room_id
+                WHERE payment.user_id = $user_id";
+
+        $result = $this->db->query($sql);
+
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+    }
+
     public function save(){
         $name = $this->getName();
         $description = $this->getDescription();
@@ -151,6 +169,20 @@ class Room{
         $save = $this->db->query($sql);
 
         if($save){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function delete(){
+        $id = $this->getId();
+
+        $sql = "DELETE FROM room WHERE id_room = $id";
+
+        $result = $this->db->query($sql);
+
+        if($result){
             return true;
         }else{
             return false;

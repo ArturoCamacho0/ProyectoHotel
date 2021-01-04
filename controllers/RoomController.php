@@ -81,4 +81,21 @@ class RoomController{
             }
         }
     }
+
+
+    public function delete(){
+        Utils::isAdmin();
+        if($_GET['id_room']){
+            $id = $_GET['id_room'];
+            $room = new Room;
+            $room->setId($id);
+            $result = $room->delete();
+
+            if($result){
+                header('Location: '.base_url."room/index");
+            }else{
+                header('Location: '.base_url."room/detail&id=".$id);
+            }
+        }
+    }
 }

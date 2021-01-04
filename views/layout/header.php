@@ -25,6 +25,12 @@
                         <a href="<?=base_url?>room/index">Habitaciones</a>
                     </li>
 
+                    <?php if(isset($_SESSION['identity'])): ?>
+                        <li>
+                            <a href="<?=base_url?>reservation/index">Reservaciones</a>
+                        </li>
+                    <?php endif; ?>
+
                 <?php if(isset($_SESSION['identity'])): ?>
                     <li class="menu_revert">
                         <a href="<?=base_url?>user/index">Mi perfil</a>
