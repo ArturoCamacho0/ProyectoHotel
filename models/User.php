@@ -149,7 +149,8 @@ class User{
             '$birthdate',
             '$email',
             '$password',
-            '$image'
+            '$image',
+            'user'
         )";
 
         $save = $this->db->query($sql);
